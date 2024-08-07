@@ -31,7 +31,7 @@ const Intro = () => {
           <span style={{ color: darkMode ? "white" : "" }}>Hy! I Am</span>
           <span>Ghouse Basha</span>
           <span>
-            Front End Developer adept in web design, app development , focused on delivering high-quality, user-centric solutions.
+            Full Stack Web Developer adept in web design, app development , focused on delivering high-quality, user-centric solutions.
           </span>
         </div>
         <Link to="contact" smooth={true} spy={true}>
