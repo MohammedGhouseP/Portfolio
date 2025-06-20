@@ -134,6 +134,61 @@
   top: 8rem;
 }
 
+.projects {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.projectCard {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  width: 200px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+}
+
+.projectCard img {
+  width: 100%;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.projectInfo {
+  margin-top: 0.5rem;
+}
+
+.projectInfo h4 {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 0.25rem;
+}
+
+.liveIcon {
+  color: rgb(87, 236, 82);
+  font-size: 0.6rem;
+}
+
+.projectInfo p {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.liveIcon {
+  color: #ff5722;      /* a bright “live” orange */
+  font-size: 0.8rem;   /* bump it up a bit */
+}
+
+
 @media screen and (max-width: 480px) {
   .works {
     flex-direction: column;

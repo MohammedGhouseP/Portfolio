@@ -7,7 +7,25 @@ import Shopify from "../../img/Shopify.png";
 import Facebook from "../../img/Facebook.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import {Link} from 'react-scroll'
+import { Link } from "react-scroll";
+// import { FaCircle } from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
+
+const projects = [
+  {
+    img: "lenskart.png",
+    title: "Lenskart Clone",
+    desc: "Solve the problem of not being able to try on glasses before buying them online.",
+    liveUrl: "https://lenskart-clone-two.vercel.app/",
+  },
+  {
+    img: "report.jpg",
+    title: "Report Web App",
+    desc: "Issue tracking & ticket management",
+    liveUrl: "https://report-9co9.vercel.app/",
+  },
+];
+
 const Works = () => {
   // context
   const theme = useContext(themeContext);
@@ -17,6 +35,30 @@ const Works = () => {
   return (
     <div className="works" id="works">
       {/* left side */}
+
+      <div className="projects">
+        {projects.map(({ img, title, desc, liveUrl }, i) => (
+          <a
+            key={i}
+            href={liveUrl}
+            className="projectCard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={img} alt={title} />
+            <div className="projectInfo">
+              <h2>
+                {title}
+                {"  live "}
+                <FaRocket className="liveIcon" title="Live" />
+              </h2>
+
+              <p>{desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
       <div className="w-left">
         <div className="awesome">
           {/* dark Mode */}
@@ -37,7 +79,11 @@ const Works = () => {
           {/* <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
           </Link> */}
-            <a href="/Resume.pdf" download className="buttonResume i-buttonResume">
+          <a
+            href="/Resume.pdf"
+            download
+            className="buttonResume i-buttonResume"
+          >
             Download Resume
           </a>
           <div
@@ -73,9 +119,9 @@ const Works = () => {
           </div>
         </motion.div>
         {/* background Circles */}
-        {/* <div className="w-backCircle blueCircle"></div>
+      {/* <div className="w-backCircle blueCircle"></div>
         <div className="w-backCircle yellowCircle"></div> */}
-      {/* </div> */} 
+      {/* </div> */}
     </div>
   );
 };
