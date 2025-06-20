@@ -35,6 +35,28 @@
   margin-top: 4rem;
 }
 
+/*Button*/
+
+.i-buttonResume {
+  width: 12rem;
+  height: 6.5rem;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.i-buttonResume:hover {
+  transform: scale(1.05);
+  background-color: white;
+}
+
+
 /* right side */
 .w-right {
   position: relative;

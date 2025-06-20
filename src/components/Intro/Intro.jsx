@@ -31,7 +31,8 @@ const Intro = () => {
           <span style={{ color: darkMode ? "white" : "" }}>Hy! I Am</span>
           <span>Ghouse Basha</span>
           <span>
-            Full Stack Web Developer adept in web design, app development , focused on delivering high-quality, user-centric solutions.
+            Full Stack Web Developer adept in web design, app development ,
+            focused on delivering high-quality, user-centric solutions.
           </span>
         </div>
         <Link to="contact" smooth={true} spy={true}>
@@ -39,16 +40,31 @@ const Intro = () => {
         </Link>
         {/* social icons */}
         <div className="i-icons">
-          <a href="https://github.com/MohammedGhouseP" target="_blank" rel="noopener noreferrer">
+          
+
+          <a
+            href="https://github.com/MohammedGhouseP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={Github} alt="Github" />
           </a>
-          <a href="https://linkedin.com/in/mohammad-ghouse-0bb220220" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/mohammed-ghouse-0bb220220/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={LinkedIn} alt="LinkedIn" />
           </a>
-          <a href="https://www.instagram.com/ghouse5545?igsh=MTZ1NWZscGY0OHpjbA==" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/ghouse5545?igsh=MTZ1NWZscGY0OHpjbA=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={Instagram} alt="Instagram" />
           </a>
         </div>
+      
       </div>
       {/* right image side */}
       <div className="i-right">

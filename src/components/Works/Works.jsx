@@ -34,9 +34,12 @@ const Works = () => {
             <br />
             exceeding expectations and driving success.
           </spane> */}
-          <Link to="contact" smooth={true} spy={true}>
+          {/* <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
-          </Link>
+          </Link> */}
+            <a href="/Resume.pdf" download className="buttonResume i-buttonResume">
+            Download Resume
+          </a>
           <div
             className="blur s-blur1"
             style={{ background: "#ABF1FF94" }}
