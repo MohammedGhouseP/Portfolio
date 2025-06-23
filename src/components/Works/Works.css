@@ -1,237 +1,133 @@
-.works {
-  padding: 0 3rem 0 3rem;
-  display: flex;
-  height: 90vh;
-  margin-top: 4rem;
-
-  /* scroll */
-  align-items: center;
+/* Container for all cards */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top:7rem
 }
-/* left side */
-.awesome {
+
+/* Each card link */
+.projectCard {
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-.awesome > :nth-child(1) {
-  color: var(--black);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(2) {
-  color: var(--orange);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(3) {
-  color: var(--gray);
-  font-size: 14px;
-  margin-top: 1rem;
-}
-.s-button {
-  width: 8rem;
-  height: 2rem;
-  margin-top: 4rem;
-}
-
-/* base layout: side by side, wrapping if needed */
-.works {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;            /* space between columns */
-  align-items: flex-start;
-}
-
-/* each child takes about half the width */
-.projects,
-.w-left {
-  flex: 1 1 45%;        /* grow, shrink, basis = 45% */
-  min-width: 300px;     /* prevent getting too narrow */
-}
-
-/* on small screens, stack vertically */
-@media (max-width: 768px) {
-  .projects,
-  .w-left {
-    flex: 1 1 100%;
-  }
-}
-
-
-/*Button*/
-
-.i-buttonResume {
-  width: 12rem;
-  height: 6.5rem;
-  color: whitesmoke;
-  border: none;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 2rem;
-  transition: all 0.3s ease-in-out;
-}
-
-.i-buttonResume:hover {
-  transform: scale(1.05);
-  background-color: white;
-}
-
-
-/* right side */
-.w-right {
-  position: relative;
-}
-
-.w-mainCircle {
-  left: 9rem;
-  position: relative;
-  width: 18rem;
-  height: 18rem;
-  border-radius: 100%;
-  box-shadow: var(--smboxShadow);
-  top: 2rem;
-  background: white;
-  /* darkMode */
-  z-index: 2;
-}
-.w-mainCircle > * {
-  position: absolute;
-}
-.w-mainCircle > :nth-child(1) {
-  top: -3rem;
-  left: 6rem;
-}
-.w-mainCircle > :nth-child(2) {
-  left: -3rem;
-  top: 5rem;
-}
-.w-mainCircle > :nth-child(3) {
-  left: 6rem;
-  top: 5rem;
-}
-.w-mainCircle > :nth-child(4) {
-  left: 15rem;
-  top: 5rem;
-}
-.w-mainCircle > :nth-child(5) {
-  left: 6rem;
-  top: 13rem;
-}
-.w-secCircle {
-  width: 6rem;
-  height: 6rem;
-  position: absolute;
-  border-radius: 100%;
-  border: 5px solid #ebebeb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: "none";
-  box-shadow: var(--smboxShadow);
-  background: white;
-}
-
-.w-secCircle > img {
-  transform: scale(0.6);
-}
-
-.w-backCircle {
-  position: absolute;
-  height: 13rem;
-  width: 13rem;
-  border-radius: 100%;
-  /* darkMode */
-  z-index: 1;
-}
-.blueCircle {
-  background: #1949b8;
-  left: 18rem;
-  top: 0rem;
-}
-.yellowCircle {
-  background: #f5c32c;
-  left: 18rem;
-  top: 8rem;
-}
-
-.projects {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.projectCard {
-  background: var(--card-bg);
-  padding: 1rem;
-  border-radius: 0.5rem;
+  background: var(--card-bg, #fff);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
-  width: 200px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .projectCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
+/* Image at top of card */
 .projectCard img {
   width: 100%;
-  border-radius: 0.25rem;
+  height: 160px;
   object-fit: cover;
 }
 
+/* Info section */
 .projectInfo {
-  margin-top: 0.5rem;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.projectInfo h4 {
+/* Title + live badge */
+.yellowCircle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+.liveIcon {
+  color: #ff6b6b;
   font-size: 1rem;
-  gap: 0.25rem;
 }
 
-.liveIcon {
-  color: rgb(87, 236, 82);
-  font-size: 0.6rem;
-}
-
+/* Description text */
 .projectInfo p {
+  flex: 1;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Tech stack */
+.techStack {
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  font-style: italic;
+  color: rgba(255, 152, 0, 0.8);
 }
 
-.liveIcon {
-  color: #ff5722;      /* a bright “live” orange */
-  font-size: 0.8rem;   /* bump it up a bit */
+.resume{
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgba(255, 153, 0, 0.996);
 }
 
+/* Dark mode overrides if needed */
+body.dark-mode .projectCard {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+body.dark-mode .projectInfo p,
+body.dark-mode .techStack {
+  color: #ccc;
+}
 
-@media screen and (max-width: 480px) {
-  .works {
-    flex-direction: column;
-    height: 55rem;
-    padding: 0;
-    gap: 5rem;
-  }
+/* 1. Use aspect‐ratio instead of fixed height for images */
+.projectCard img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
 
-  .w-right {
-    display: flex;
-    align-items: flex-start;
-    justify-content:start;
-    transform: scale(0.7);
-  }
-  .w-mainCircle{
-    position: static;
-  }
-  .w-backCircle{
-    left: 8rem!important;
-  }
+/* 2. Fluid typography with clamp() */
+.yellowCircle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+.techStack {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+}
 
+/* 3. Adjust grid gaps, padding and columns at breakpoints */
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+  .projectInfo {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .yellowCircle {
+    gap: 0.25rem;
+  }
+  .projectInfo p {
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .resume {
+    font-size: 1.25rem;
+  }
 }

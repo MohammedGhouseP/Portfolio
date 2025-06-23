@@ -15,14 +15,16 @@ const projects = [
   {
     img: "lenskart.png",
     title: "Lenskart Clone",
-    desc: "Solve the problem of not being able to try on glasses before buying them online.",
+    desc: "A virtual try-on experience that uses your webcam and face-detection to let you see how different frames look on you in real time. Includes advanced search, filtering by shape or color, seamless cart integration for checkout, and user profiles to save favorite styles.",
     liveUrl: "https://lenskart-clone-two.vercel.app/",
+    techStack: "React, Chakra UI, Redux, Node.js, Express, JWT, MongoDB",
   },
   {
     img: "report.jpg",
     title: "Report Web App",
-    desc: "Issue tracking & ticket management",
+    desc: "A full-featured issue-tracking platform where users can submit tickets, set priorities, and leave comments. Admins and agents can assign, filter, and update ticket statuses, view analytics on resolution times, and export reports for team performance.",
     liveUrl: "https://report-9co9.vercel.app/",
+    techStack: "React, Chakra UI, json Server, context API",
   },
 ];
 
@@ -36,8 +38,8 @@ const Works = () => {
     <div className="works" id="works">
       {/* left side */}
 
-      <div className="projects">
-        {projects.map(({ img, title, desc, liveUrl }, i) => (
+      <div className="projects"  >
+        {projects.map(({ img, title, desc, liveUrl, techStack }, i) => (
           <a
             key={i}
             href={liveUrl}
@@ -46,43 +48,30 @@ const Works = () => {
             rel="noopener noreferrer"
           >
             <img src={img} alt={title} />
-            <div className="projectInfo">
-              <h2>
+            <div  className="projectInfo" >
+              <h2 className="yellowCircle">
                 {title}
                 {"  live "}
                 <FaRocket className="liveIcon" title="Live" />
               </h2>
 
               <p>{desc}</p>
+              <p className="techStack">{techStack}</p>
             </div>
           </a>
         ))}
       </div>
 
       <div className="w-left">
-        <div className="awesome">
+        <div className="techStack">
           {/* dark Mode */}
           <span style={{ color: darkMode ? "white" : "" }}>
             As a fresher need oppurtunity to show case my skill set.
           </span>
-          {/* <span>Brands & Clients</span>
-          <spane>
-          Works with top-tier brands and esteemed clients to
-            <br />
-            deliver exceptional solutions tailored to their
-          
-            <br />
-            unique needs,consistently 
-            <br />
-            exceeding expectations and driving success.
-          </spane> */}
-          {/* <Link to="contact" smooth={true} spy={true}>
-            <button className="button s-button">Hire Me</button>
-          </Link> */}
           <a
             href="/Resume.pdf"
             download
-            className="buttonResume i-buttonResume"
+            className="resume"
           >
             Download Resume
           </a>
@@ -94,34 +83,6 @@ const Works = () => {
 
         {/* right side */}
       </div>
-      {/* <div className="w-right">
-        <motion.div
-          initial={{ rotate: 45 }}
-          whileInView={{ rotate: 0 }}
-          viewport={{ margin: "-40px" }}
-          transition={{ duration: 3.5, type: "spring" }}
-          className="w-mainCircle"
-        >
-          <div className="w-secCircle">
-            <img src={Upwork} alt="" />
-          </div>
-          <div className="w-secCircle">
-            <img src={Fiverr} alt="" />
-          </div>
-          <div className="w-secCircle">
-            <img src={Amazon} alt="" />
-          </div>{" "}
-          <div className="w-secCircle">
-            <img src={Shopify} alt="" />
-          </div>
-          <div className="w-secCircle">
-            <img src={Facebook} alt="" />
-          </div>
-        </motion.div>
-        {/* background Circles */}
-      {/* <div className="w-backCircle blueCircle"></div>
-        <div className="w-backCircle yellowCircle"></div> */}
-      {/* </div> */}
     </div>
   );
 };

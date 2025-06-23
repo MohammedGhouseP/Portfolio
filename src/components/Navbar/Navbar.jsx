@@ -43,33 +43,31 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger / Close Icon */}
-      <div
-        className="n-hamburger"
-        onClick={() => setMenuOpen((prev) => !prev)}
-      >
+      <div className="n-hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
         {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
       </div>
 
       {/* Slide-out Menu */}
-      <nav
-        ref={menuRef}
-        className={`n-right ${menuOpen ? "open" : ""}`}
-      >
+      <nav className={`n-right ${menuOpen ? "open" : ""}`}
+        ref={menuRef}>
         <ul className="n-list">
-         
+          <li>
             <Link to="Navbar" {...linkProps}>
               Home
             </Link>
-          
+          </li>
+          <li>
             <Link to="services" {...linkProps}>
               Skills
             </Link>
-        
+          </li>
+          <li>
             <Link to="works" {...linkProps}>
               Projects
             </Link>
-         
+          </li>
         </ul>
+
         <Link to="contact" {...linkProps}>
           <button className="button n-button">Contact</button>
         </Link>
