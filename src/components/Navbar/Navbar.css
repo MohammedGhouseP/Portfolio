@@ -1,50 +1,107 @@
 .n-wrapper {
   height: 10vh;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  top: 0;
-}
-.n-left {
-  flex: 1;
   align-items: center;
-  justify-content: left;
-  display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
+/* Left side */
+.n-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
 .n-name {
   font-size: 1.3rem;
   font-weight: bold;
 }
+
+/* Hamburger icon (hidden on desktop) */
+.n-hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Default menu (desktop) - vertical stack */
 .n-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-weight: 400;
+  transition: transform 0.3s ease;
 }
-
 .n-list {
-  flex: 10;
+  flex: 1;
 }
-.n-list > ul {
+.n-list ul {
   display: flex;
-  gap: 2rem;
-  margin-right: 4rem;
+  flex-direction: column; /* vertical stack */
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
-
-.n-list > ul :hover {
+.n-list ul li:hover {
   color: var(--orange);
   cursor: pointer;
 }
-
 .n-button {
-  flex: 2;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
 }
 
-@media screen and (max-width: 480px) {
-  .n-list {
+/* Responsive (<=768px) */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .n-hamburger {
+    display: block;
+  }
+  /* Hide desktop list/button */
+  .n-list,
+  .n-button {
     display: none;
+  }
+
+  /* Slide-out nav panel */
+  .n-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background: var(--bg);
+    flex-direction: column;
+    padding-top: 4rem;
+    transform: translateX(100%);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+  .n-right.open {
+    transform: translateX(0);
+  }
+
+  /* Stacked links in drawer */
+ .n-list {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 1rem;
+  padding: 10;
+  margin: 0;
+}
+  .n-list ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0 1rem;
+    display: flex;
+  }
+  .n-button {
+    display: block;
+    margin: 2rem 1rem;
+    width: calc(100% - 2rem);
   }
 }

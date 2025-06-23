@@ -98,7 +98,7 @@ function Services() {
         <h2>Web Development</h2>
         <p>Crafting captivating websites tailored to your vision. Leveraging cutting-edge technologies for exceptional web solutions.</p>
         <h3>Skills:</h3>
-        <p>HTML, CSS, JavaScript, ES6, React.js, Next.js, CI/CD, Node.js, Express.js, MongoDB, Docker</p>
+        <p>HTML, CSS, JavaScript, ES6, React.js, Next.js, CI/CD, Docker, Node.js, Express.js and MongoDB</p>
       </div>
       <div className="service-card">
         <img src="https://img.freepik.com/free-photo/representations-user-experience-interface-design_23-2150038906.jpg" alt="App Development" />

@@ -35,6 +35,30 @@
   margin-top: 4rem;
 }
 
+/* base layout: side by side, wrapping if needed */
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;            /* space between columns */
+  align-items: flex-start;
+}
+
+/* each child takes about half the width */
+.projects,
+.w-left {
+  flex: 1 1 45%;        /* grow, shrink, basis = 45% */
+  min-width: 300px;     /* prevent getting too narrow */
+}
+
+/* on small screens, stack vertically */
+@media (max-width: 768px) {
+  .projects,
+  .w-left {
+    flex: 1 1 100%;
+  }
+}
+
+
 /*Button*/
 
 .i-buttonResume {
