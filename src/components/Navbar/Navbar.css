@@ -1,11 +1,15 @@
 .n-wrapper {
   height: 10vh;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  position: relative;
-  margin-bottom: 2rem;
+  position: fixed;
+  top: 0;
+  background: var(--bg, white);
+  z-index: 1000;
+  margin-bottom: 3rem;
   /* border: black solid 4px; */
 }
 
@@ -25,7 +29,8 @@
 .n-hamburger {
   display: none;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1001;
+  position: relative;
 }
 
 /* Default menu (desktop) */
@@ -79,19 +84,19 @@
     position: relative;
   }
 
-  /* Menu appears right below hamburger icon */
+  /* Menu appears right below hamburger icon - fixed positioning */
   .n-right {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
+    position: fixed;
+    top: 10vh;
+    right: 1rem;
     width: 150px;
     background: var(--bg, white);
     flex-direction: column;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    z-index: 99;
+    z-index: 1002;
     margin-top: 0.5rem;
   }
 

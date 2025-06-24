@@ -1,7 +1,7 @@
 .Intro {
   display: flex;
   height: 77vh;
-  margin-top: 6rem;
+  margin-top: 9rem;
 }
 
 /* left side styling */
@@ -35,7 +35,7 @@
 }
 .i-button {
   width: 6rem;
-  height: 2rem;
+  height: 3rem;
 }
 .i-icons {
   margin-top: 3rem;
@@ -55,6 +55,7 @@
 .i-right {
   flex: 1;
   position: relative;
+
 }
 .i-right > * {
   position: absolute;
@@ -73,6 +74,8 @@
 .i-right > :nth-child(3) {
   transform: scale(1.4);
   left: 28%;
+  height:450px;
+  width:auto
 }
 .i-right > :nth-child(4) {
   transform: scale(0.62);
@@ -107,6 +110,12 @@
     transform: scale(0.8);
     left: -3rem;
   }
+
+  .i-right > :nth-child(3) {
+  height:350px;
+  width:auto
+}
+  
   .i-right .blur {
     display: none;
   }

@@ -28,20 +28,34 @@ const Intro = () => {
       <div className="i-left">
         <div className="i-name">
           {/* yahan change hy darkmode ka */}
-          <span style={{ color: darkMode ? "white" : "" }}>Hello! I Am</span>
+          <span style={{ color: darkMode ? "white" : "" }}>Hello! I am</span>
           <span>Ghouse Basha</span>
           <span>
             Full Stack Web Developer adept in web design, app development ,
             focused on delivering high-quality, user-centric solutions.
           </span>
         </div>
-        <Link to="contact" smooth={true} spy={true}>
-          <button className="button i-button">Hire me</button>
-        </Link>
+
+        <button
+          onClick={() => {
+            // Download the file
+            const link = document.createElement("a");
+            link.href = "/resume.pdf";
+            link.download = "resume.pdf";
+            link.click();
+
+            // Open in new tab after a short delay
+            setTimeout(() => {
+              window.open("/resume.pdf", "_blank");
+            }, 100);
+          }}
+          className="button i-button"
+        >
+          Download Resume
+        </button>
+
         {/* social icons */}
         <div className="i-icons">
-          
-
           <a
             href="https://github.com/MohammedGhouseP"
             target="_blank"
@@ -64,7 +78,6 @@ const Intro = () => {
             <img src={Instagram} alt="Instagram" />
           </a>
         </div>
-      
       </div>
       {/* right image side */}
       <div className="i-right">
