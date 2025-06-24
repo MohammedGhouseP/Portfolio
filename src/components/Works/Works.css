@@ -119,6 +119,9 @@ body.dark-mode .techStack {
   .projectInfo {
     padding: 0.75rem;
   }
+  .techStack{
+    margin: 0px 40px;
+  }
 }
 
 @media (max-width: 480px) {
