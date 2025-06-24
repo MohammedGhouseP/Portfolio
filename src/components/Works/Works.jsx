@@ -8,7 +8,6 @@ import Facebook from "../../img/Facebook.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-// import { FaCircle } from "react-icons/fa";
 import { FaRocket, FaGithub, FaUnderline } from "react-icons/fa";
 
 const projects = [
@@ -35,9 +34,16 @@ const Works = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
-  // transition
   return (
-    <div className="works" id="works">
+    <div
+      className="works"
+      id="works"
+      style={{
+        backgroundColor: darkMode ? "#000000" : "#ffffff",
+        color: darkMode ? "#ffffff" : "#000000",
+        transition: "background-color 0.3s ease, color 0.3s ease",
+      }}
+    >
       <div
         style={{
           color: "orange",
@@ -45,13 +51,12 @@ const Works = () => {
           textAlign: "center",
           fontSize: "40px",
           fontWeight: "bold",
-          marginTop:"60px",
-          textDecoration:"underline",
+          marginTop: "9rem",
+          textDecoration: "underline",
         }}
       >
         Projects
       </div>
-      {/* left side */}
 
       <div className="projects">
         {projects.map(({ img, title, desc, liveUrl, techStack }, i) => (
@@ -61,17 +66,41 @@ const Works = () => {
             className="projectCard"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              backgroundColor: darkMode ? "#1a1a1a" : "#ffffff",
+              color: darkMode ? "#ffffff" : "#000000",
+              border: darkMode ? "1px solid #333" : "1px solid #ddd",
+              transition: "all 0.3s ease",
+            }}
           >
             <img src={img} alt={title} />
             <div className="projectInfo">
-              <h2 className="yellowCircle">
+              <h2
+                className="yellowCircle"
+                style={{
+                  color: darkMode ? "#ffffff" : "#000000",
+                }}
+              >
                 {title}
                 {"  live "}
-                <FaRocket className="liveIcon" title="Live" />
-                <FaGithub className="liveIcon" title="Live" />
+                <FaRocket
+                  className="liveIcon"
+                  title="Live"
+                  style={{ color: darkMode ? "#ffffff" : "#000000" }}
+                />
+                <FaGithub
+                  className="liveIcon"
+                  title="GitHub"
+                  style={{ color: darkMode ? "#ffffff" : "#000000" }}
+                />
               </h2>
-              <p>{desc}</p>
-              <p className="techStack">{techStack}</p>
+              <p style={{ color: darkMode ? "#cccccc" : "#333333" }}>{desc}</p>
+              <p
+                className="techStack"
+                style={{ color: darkMode ? "#aaaaaa" : "#666666" }}
+              >
+                {techStack}
+              </p>
             </div>
           </a>
         ))}
@@ -79,18 +108,17 @@ const Works = () => {
 
       <div className="w-left">
         <div className="techStack">
-          {/* dark Mode */}
-          <span style={{ color: darkMode ? "white" : "" }}>
-            As a fresher need oppurtunity to show case my skill set.
+          <span style={{ color: darkMode ? "white" : "#000000" }}>
+            As a fresher need opportunity to showcase my skill set.
           </span>
 
           <div
             className="blur s-blur1"
-            style={{ background: "#ABF1FF94" }}
+            style={{
+              background: darkMode ? "#333333" : "#ABF1FF94",
+            }}
           ></div>
         </div>
-
-        {/* right side */}
       </div>
     </div>
   );
