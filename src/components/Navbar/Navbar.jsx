@@ -78,7 +78,7 @@ const Navbar = () => {
         <ul className="n-list">
           <li>
             <Link 
-              to="Navbar" 
+              to="Intro" 
               {...linkProps}
               style={{ color: darkMode ? "white" : "black" }}
             >
