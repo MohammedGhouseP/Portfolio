@@ -10,7 +10,41 @@
   background: var(--bg, white);
   z-index: 1000;
   margin-bottom: 3rem;
+  /* Dark mode text color */
+  color: var(--color, black);
   /* border: black solid 4px; */
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .n-wrapper,
+.dark .n-wrapper {
+  background: black;
+  color: white;
+}
+
+[data-theme="dark"] .n-name,
+.dark .n-name {
+  color: white;
+}
+
+[data-theme="dark"] .n-hamburger,
+.dark .n-hamburger {
+  color: white;
+}
+
+[data-theme="dark"] .n-list a,
+.dark .n-list a {
+  color: white;
+}
+
+[data-theme="dark"] .n-list ul li,
+.dark .n-list ul li {
+  color: white;
+}
+
+[data-theme="dark"] .n-button,
+.dark .n-button {
+  color: white;
 }
 
 /* Left side */
@@ -20,9 +54,12 @@
   gap: 2rem;
   flex: 1;
 }
+
 .n-name {
   font-size: 1.3rem;
   font-weight: bold;
+  /* Dark mode support */
+  color: var(--color, black);
 }
 
 /* Hamburger icon (hidden on desktop) */
@@ -30,7 +67,8 @@
   display: none;
   cursor: pointer;
   z-index: 1001;
-  position: relative;
+  /* Dark mode support for icons */
+  color: var(--color, black);
 }
 
 /* Default menu (desktop) */
@@ -40,6 +78,7 @@
   flex: 1;
   transition: transform 0.3s ease;
   justify-content: space-between;
+  /* border: black solid 1px; */
 }
 
 .n-list {
@@ -50,6 +89,12 @@
   padding: 0;
   align-items: center;
   justify-content: center;
+}
+
+.n-list a {
+  /* Dark mode support for links */
+  color: var(--color, black);
+  text-decoration: none;
 }
 
 .n-list a:hover {
@@ -67,6 +112,11 @@
   justify-content: space-around;
 }
 
+.n-list ul li {
+  /* Dark mode support for list items */
+  color: var(--color, black);
+}
+
 .n-list ul li:hover {
   color: var(--orange);
   cursor: pointer;
@@ -75,13 +125,20 @@
 .n-button {
   padding: 0.5rem 1rem;
   margin-top: 1rem;
+  /* Dark mode support for button text */
+  color: var(--color, black);
 }
 
 @media (max-width: 768px) {
   /* Show hamburger on mobile */
   .n-hamburger {
-    display: block;
+    display: inline-block;
     position: relative;
+    width: 100%;
+    /* border: black solid 1px; */
+    margin-left: 5rem;
+    /* Ensure hamburger icon is visible in dark mode */
+    color: var(--color, black);
   }
 
   /* Menu appears right below hamburger icon - fixed positioning */
@@ -98,6 +155,26 @@
     border-radius: 8px;
     z-index: 1002;
     margin-top: 0.5rem;
+    /* Dark mode support for mobile menu */
+    color: var(--color, black);
+  }
+
+  /* Dark mode for mobile menu */
+  [data-theme="dark"] .n-right,
+  .dark .n-right {
+    background: black;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  }
+
+  [data-theme="dark"] .n-list a,
+  .dark .n-list a {
+    color: white;
+  }
+
+  [data-theme="dark"] .n-button,
+  .dark .n-button {
+    color: white;
   }
 
   .n-right.open {
@@ -112,10 +189,17 @@
     margin: 0;
   }
 
+  .n-list a {
+    /* Dark mode support for mobile links */
+    color: var(--color, black);
+  }
+
   .n-button {
     display: block;
     margin: 1rem 0 0 0;
     width: 100%;
     padding: 0.5rem;
+    /* Dark mode support for mobile button */
+    color: var(--color, black);
   }
 }

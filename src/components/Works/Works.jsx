@@ -46,7 +46,7 @@ const Works = () => {
           fontSize: "40px",
           fontWeight: "bold",
           marginTop:"60px",
-          textDecoration:"Underline",
+          textDecoration:"underline",
         }}
       >
         Projects

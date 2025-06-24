@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Toggle from "../Toggle/Toggle";
 import { Link } from "react-scroll";
 import { HiMenu, HiX } from "react-icons/hi";
 import "./Navbar.css";
+import { themeContext } from "../../Context";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
 
   // Close menu on outside click
   useEffect(() => {
@@ -35,41 +38,79 @@ const Navbar = () => {
   };
 
   return (
-    <div className="n-wrapper" id="Navbar">
+    <div 
+      className="n-wrapper" 
+      id="Navbar"
+      style={{ 
+        backgroundColor: darkMode ? "black" : "white",
+        color: darkMode ? "white" : "black"
+      }}
+    >
       {/* Left side */}
       <div className="n-left">
-        <div className="n-name">Ghouse</div>
+        <div 
+          className="n-name"
+          style={{ color: darkMode ? "white" : "black" }}
+        >
+          Ghouse
+        </div>
         <Toggle />
       </div>
 
       {/* Hamburger / Close Icon */}
-      <div className="n-hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
+      <div
+        style={{ color: darkMode ? "white" : "black" }}
+        className="n-hamburger"
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
         {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
       </div>
 
       {/* Slide-out Menu */}
-      <nav className={`n-right ${menuOpen ? "open" : ""}`}
-        ref={menuRef}>
+      <nav 
+        className={`n-right ${menuOpen ? "open" : ""}`} 
+        ref={menuRef}
+        style={{ 
+          backgroundColor: darkMode ? "black" : "white",
+          color: darkMode ? "white" : "black"
+        }}
+      >
         <ul className="n-list">
           <li>
-            <Link to="Navbar" {...linkProps}>
+            <Link 
+              to="Navbar" 
+              {...linkProps}
+              style={{ color: darkMode ? "white" : "black" }}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="services" {...linkProps}>
+            <Link 
+              to="services" 
+              {...linkProps}
+              style={{ color: darkMode ? "white" : "black" }}
+            >
               Skills
             </Link>
           </li>
           <li>
-            <Link to="works" {...linkProps}>
+            <Link 
+              to="works" 
+              {...linkProps}
+              style={{ color: darkMode ? "white" : "black" }}
+            >
               Projects
             </Link>
           </li>
         </ul>
 
         <Link to="contact" {...linkProps}>
-          <button className="button n-button">Contact</button>
+          <button 
+            className="button n-button"
+          >
+            Contact
+          </button>
         </Link>
       </nav>
     </div>
